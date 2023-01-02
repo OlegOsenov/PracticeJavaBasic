@@ -3,9 +3,10 @@ package easyCodeRu.lesson15;
 import java.util.Scanner;
 
 public class Lesson {
+    static Scanner scanner = new Scanner(System.in);
+    static String nameDan = "Даниил";
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String nameDan = "Даниил";
+
         while (true){
             print("Введите имя: ");
             String nameScan = scanner.nextLine();
@@ -17,7 +18,7 @@ public class Lesson {
         }
         print("Программа завершена");
     }
-    private static void print(String str){
+    public static void print(String str){
         System.out.println(str);
     }
 }
