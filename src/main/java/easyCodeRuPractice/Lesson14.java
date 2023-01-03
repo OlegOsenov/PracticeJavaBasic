@@ -12,11 +12,13 @@ public class Lesson14 {
         print(differenceBetweenMaxAndMin(new int[]{5, 3}));
         print(differenceBetweenMaxAndMin(new int[]{15, 2, 10, -3, 1, -13}));
         differenceBetweenMaxAndMinSorted(new int[]{15, 2, 10, -3, 1, -13});
+        differenceBetweenMaxAndMinSorted(new int[]{15, 2, 10, -3, 1, -13, 3, -5, 11, 15, 19,23,45,21,7});
     }
 
     private static void differenceBetweenMaxAndMinSorted(int[] array) {
         int min;
         int max;
+        int countIter = 0;
         if (array.length < 2) {
             print("array doesn't contain at last 2 items");
         } else {
@@ -31,11 +33,13 @@ public class Lesson14 {
                         isSorted = false;
                     }
                 }
+                countIter++;
             }
             printArray(array);
             min = array[0];
             max = array[array.length - 1];
-            print("\nmin = " + min + " max = " + max + "\ndifference = " + (max - min));
+            print("\nmin = " + min + " max = " + max + "\ndifference = " + (max - min) +
+                    " кол - во итерации = " + countIter);
         }
     }
 
