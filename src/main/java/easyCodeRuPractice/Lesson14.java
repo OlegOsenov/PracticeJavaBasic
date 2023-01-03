@@ -8,15 +8,43 @@ public class Lesson14 {
         showNumbersDividedByArg(10, 4);
         print("Задание 3: ");
         showFibbonachi(10);
+        print("Задание 4: ");
+        print(differenceBetweenMaxAndMin(new int[]{5, 3}));
+        print(differenceBetweenMaxAndMin(new int[]{15, 2, 10, -3, 1, -13}));
+    }
+
+    private static int differenceBetweenMaxAndMin(int[] array) {
+        int difference = 0;
+        if (array.length < 2) {
+            print("array doesn't contain at last 2 items");
+        } else {
+            final int item0 = array[0];
+            final int lastItem = array[array.length - 1];
+            boolean isFirstItem = item0 < lastItem;
+            int min = isFirstItem ? item0 : lastItem;
+            int max = isFirstItem ? lastItem : item0;
+            for (int i = 1; i < array.length - 1; i++) {
+                if (array[i] < min) {
+                    min = array[i];
+                } else if (array[i] > max) {
+                    max = array[i];
+                }
+            }
+            print("min " + min + " max " + max);
+            difference = max - min;
+        }
+
+
+        return difference;
     }
 
     private static void showFibbonachi(int max) {
         int item0 = 1;
         int item1 = 1;
         for (int i = 0; i < max; i++) {
-            if (i == 0 || i == 1){
+            if (i == 0 || i == 1) {
                 print(1);
-            }else {
+            } else {
                 print(item0 + item1);
                 int item1Old = item1;
                 item1 = item0 + item1;
