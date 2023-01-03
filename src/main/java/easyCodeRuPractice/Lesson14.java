@@ -12,7 +12,21 @@ public class Lesson14 {
         print(differenceBetweenMaxAndMin(new int[]{5, 3}));
         print(differenceBetweenMaxAndMin(new int[]{15, 2, 10, -3, 1, -13}));
         differenceBetweenMaxAndMinSorted(new int[]{15, 2, 10, -3, 1, -13});
-        differenceBetweenMaxAndMinSorted(new int[]{15, 2, 10, -3, 1, -13, 3, -5, 11, 15, 19,23,45,21,7});
+        differenceBetweenMaxAndMinSorted(new int[]{15, 2, 10, -3, 1, -13, 3, -5, 11, 15, 19, 23, 45, 21, 7});
+        print("Задание 6: ");
+        showItemsRever(new int[]{15, 2, 10, -3, 1, -13});
+
+    }
+
+    private static void showItemsRever(int[] array) {
+        if (array.length == 0) {
+            print("array is empty");
+        } else {
+            for (int i = 0; i < array.length; i++) {
+                print(array[array.length - 1 - i]);
+            }
+        }
+
     }
 
     private static void differenceBetweenMaxAndMinSorted(int[] array) {
