@@ -22,8 +22,21 @@ public class Lesson14 {
         print("Задание 9: ");
         abs(new int[]{15, -2, 10, -3, 1, -13});
         abs(new int[]{15, -2, 10, -3, 1, -13, 1});
+        print("Задание 10: ");
+        absVer2(new int[]{1, 2, 3, 4, 3, 2, 1});
+
     }
 
+    private static void absVer2(int[] array) {
+        int[] result = new int[array.length];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = array[i] + array[array.length - 1 - i];
+        }
+        printArray(result);
+    }
+
+    // Метод принимает массив на вход, и отдает новый массив, в котором каждый член это
+//сумма этого числа и следующего. Последнее число останется таким какое есть.
     private static void abs(int[] array) {
         int[] result = new int[array.length];
         for (int i = 0; i < result.length - 1; i++) {
@@ -33,6 +46,8 @@ public class Lesson14 {
         printArray(result);
     }
 
+    // Метод принимает массив чисел на вход и отдает на выход массив тех же чисел, но
+//заменив отрицательные положительными. Нули не трогать.
     private static void arrayDiff(int[] array) {
         int[] result = new int[array.length];
         for (int i = 0; i < result.length; i++) {
@@ -41,6 +56,8 @@ public class Lesson14 {
         printArray(result);
     }
 
+    // Вывести индекс элемента массива который равен строке “this”, если их несколько, то this”, если их несколько, то
+//через запятую
     private static void showIndex(String[] array) {
         if (array.length == 0) {
             print("array is empty");
@@ -58,6 +75,7 @@ public class Lesson14 {
         }
     }
 
+    // Вывести в обратном порядке члены массива (метод принимает аргументом массив)
     private static void showItemsRever(int[] array) {
         if (array.length == 0) {
             print("array is empty");
