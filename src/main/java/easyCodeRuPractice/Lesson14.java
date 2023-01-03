@@ -15,7 +15,25 @@ public class Lesson14 {
         differenceBetweenMaxAndMinSorted(new int[]{15, 2, 10, -3, 1, -13, 3, -5, 11, 15, 19, 23, 45, 21, 7});
         print("Задание 6: ");
         showItemsRever(new int[]{15, 2, 10, -3, 1, -13});
+        print("Задание 6: ");
+        showIndex(new String[]{"a","b","this","2","this","this"});
+    }
 
+    private static void showIndex(String[] array) {
+        if (array.length == 0){
+            print("array is empty");
+        } else {
+            String indexes = "";
+            for (int i = 0; i < array.length; i++) {
+                if ("this".equals(array[i])){
+                    if (!indexes.isEmpty()){
+                        indexes += ", ";
+                    }
+                    indexes += i;
+                }
+            }
+            print(indexes);
+        }
     }
 
     private static void showItemsRever(int[] array) {
