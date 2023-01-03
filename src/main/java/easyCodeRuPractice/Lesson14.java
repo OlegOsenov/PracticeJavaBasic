@@ -19,6 +19,18 @@ public class Lesson14 {
         showIndex(new String[]{"a", "b", "this", "2", "this", "this"});
         print("Задание 8: ");
         arrayDiff(new int[]{15, -2, 10, -3, 1, -13});
+        print("Задание 9: ");
+        abs(new int[]{15, -2, 10, -3, 1, -13});
+        abs(new int[]{15, -2, 10, -3, 1, -13, 1});
+    }
+
+    private static void abs(int[] array) {
+        int[] result = new int[array.length];
+        for (int i = 0; i < result.length - 1; i++) {
+            result[i] = array[i] + array[i + 1];
+        }
+        result[result.length -1] = array[array.length - 1];
+        printArray(result);
     }
 
     private static void arrayDiff(int[] array) {
@@ -154,6 +166,6 @@ public class Lesson14 {
             }
             System.out.print(array[i]);
         }
-        System.out.print("]");
+        System.out.print("]\n");
     }
 }
