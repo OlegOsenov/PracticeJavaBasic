@@ -29,7 +29,7 @@ public class Lesson14 {
         for (int i = 0; i < result.length - 1; i++) {
             result[i] = array[i] + array[i + 1];
         }
-        result[result.length -1] = array[array.length - 1];
+        result[result.length - 1] = array[array.length - 1];
         printArray(result);
     }
 
@@ -69,6 +69,7 @@ public class Lesson14 {
 
     }
 
+    //Найти минимум и максимум в массиве и вывести разницу с помощью сортировки
     private static void differenceBetweenMaxAndMinSorted(int[] array) {
         int min;
         int max;
@@ -97,6 +98,7 @@ public class Lesson14 {
         }
     }
 
+    //Найти минимум и максимум в массиве и вывести разницу
     private static int differenceBetweenMaxAndMin(int[] array) {
         int difference = 0;
         if (array.length < 2) {
@@ -122,6 +124,7 @@ public class Lesson14 {
         return difference;
     }
 
+    //Вывести первые n). Мы членов последовательности Фиббоначи
     private static void showFibbonachi(int max) {
         int item0 = 1;
         int item1 = 1;
@@ -137,12 +140,14 @@ public class Lesson14 {
         }
     }
 
+    /* Метод выводит все числа кратные числу, которое передаем в аргумент*/
     private static void showNumbersDividedByArg(int max, int arg) {
         for (int i = 0; i < max; i += arg) {
             print(i);
         }
     }
 
+    /* Метод выводит все числа кратные 3 от нуля до какого-то числа (входной параметр) */
     private static void showNumbersDividedBy3(int max) {
         for (int i = 0; i < max; i += 3) {
             print(i);
