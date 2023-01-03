@@ -11,6 +11,32 @@ public class Lesson14 {
         print("Задание 4: ");
         print(differenceBetweenMaxAndMin(new int[]{5, 3}));
         print(differenceBetweenMaxAndMin(new int[]{15, 2, 10, -3, 1, -13}));
+        differenceBetweenMaxAndMinSorted(new int[]{15, 2, 10, -3, 1, -13});
+    }
+
+    private static void differenceBetweenMaxAndMinSorted(int[] array) {
+        int min;
+        int max;
+        if (array.length < 2) {
+            print("array doesn't contain at last 2 items");
+        } else {
+            boolean isSorted = false;
+            while (!isSorted) {
+                isSorted = true;
+                for (int i = 1; i < array.length; i++) {
+                    if (array[i] < array[i - 1]) {
+                        int temp = array[i];
+                        array[i] = array[i - 1];
+                        array[i - 1] = temp;
+                        isSorted = false;
+                    }
+                }
+            }
+            printArray(array);
+            min = array[0];
+            max = array[array.length - 1];
+            print("\nmin = " + min + " max = " + max + "\ndifference = " + (max - min));
+        }
     }
 
     private static int differenceBetweenMaxAndMin(int[] array) {
@@ -71,5 +97,17 @@ public class Lesson14 {
 
     private static void print(int str) {
         System.out.println(str);
+    }
+
+    private static void printArray(int[] array) {
+        System.out.print("[");
+        ;
+        for (int i = 0; i < array.length; i++) {
+            if (i > 0) {
+                System.out.print(", ");
+            }
+            System.out.print(array[i]);
+        }
+        System.out.print("]");
     }
 }
