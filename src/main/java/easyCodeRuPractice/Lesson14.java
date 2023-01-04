@@ -26,11 +26,29 @@ public class Lesson14 {
         absVer2(new int[]{1, 2, 3, 4, 3, 2, 1});
         print("Задание 11: ");
         printArray(doubleArray(new int[]{1, 2, 3, 4, 3, 2, 1}));
+        print("Задание 13: ");
+        printArray(productArrays(new int[]{1, 2, 3, 4, 3, 2, 1},new int[]{1, 2, 3, 4, 3, 2, 1}));
 
+    }
+    // 13 Метод принимает 2 массива чисел и выводит новый массив, где каждый член массива
+    //это произведение членов соответственно. т.е. {1, 2, 3};{4, 5, 6} → {4, 10, 18}
+    private static double[] productArrays(int[] array1,int[] array2){
+        double[] result;
+        final int arrayLength = array1.length;
+        if (arrayLength == array2.length){
+            result = new double[arrayLength];
+            for (int i = 0; i < arrayLength; i++) {
+                result[i] = ((double) array1[i]*array2[i]);
+            }
+        } else {
+            print("array are different size");
+            result = new double[]{};
+        }
+        return result;
     }
 
 
-    // Метод принимает на вход массив чисел и отдает на выход массив вдвое больше.
+    //11 Метод принимает на вход массив чисел и отдает на выход массив вдвое больше.
     //Первый и второй элемент нового массива равны первому элементу первого массива.
     //Третий и четвертый элементы равны второму элементу первого массива. Типа {1, 2, 3}
     //→ {1, 1, 2, 2, 3, 3}
@@ -46,7 +64,7 @@ public class Lesson14 {
     }
 
 
-    // Метод принимает массив на вход и отдает новый массив где первым элементом
+    //10 Метод принимает массив на вход и отдает новый массив где первым элементом
     //является сумма первого и последнего. Для второго элемента сумма второго и
     //предпоследнего.
     private static void absVer2(int[] array) {
@@ -57,7 +75,7 @@ public class Lesson14 {
         printArray(result);
     }
 
-    // Метод принимает массив на вход, и отдает новый массив, в котором каждый член это
+    //9 Метод принимает массив на вход, и отдает новый массив, в котором каждый член это
 //сумма этого числа и следующего. Последнее число останется таким какое есть.
     private static void abs(int[] array) {
         int[] result = new int[array.length];
@@ -203,6 +221,17 @@ public class Lesson14 {
     }
 
     private static void printArray(int[] array) {
+        System.out.print("[");
+        ;
+        for (int i = 0; i < array.length; i++) {
+            if (i > 0) {
+                System.out.print(", ");
+            }
+            System.out.print(array[i]);
+        }
+        System.out.print("]\n");
+    }
+    private static void printArray(double[] array) {
         System.out.print("[");
         ;
         for (int i = 0; i < array.length; i++) {
