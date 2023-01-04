@@ -24,9 +24,31 @@ public class Lesson14 {
         abs(new int[]{15, -2, 10, -3, 1, -13, 1});
         print("Задание 10: ");
         absVer2(new int[]{1, 2, 3, 4, 3, 2, 1});
+        print("Задание 11: ");
+        printArray(doubleArray(new int[]{1, 2, 3, 4, 3, 2, 1}));
 
     }
 
+
+    // Метод принимает на вход массив чисел и отдает на выход массив вдвое больше.
+    //Первый и второй элемент нового массива равны первому элементу первого массива.
+    //Третий и четвертый элементы равны второму элементу первого массива. Типа {1, 2, 3}
+    //→ {1, 1, 2, 2, 3, 3}
+    private static int[] doubleArray(int[] array) {
+        int[] result = new int[array.length * 2];
+        int j = 0;
+        for (int i = 0; i < result.length; i += 2) {
+            result[i] = array[j];
+            result[i+1] = array[j];
+            j++;
+        }
+        return result;
+    }
+
+
+    // Метод принимает массив на вход и отдает новый массив где первым элементом
+    //является сумма первого и последнего. Для второго элемента сумма второго и
+    //предпоследнего.
     private static void absVer2(int[] array) {
         int[] result = new int[array.length];
         for (int i = 0; i < result.length; i++) {
