@@ -3,7 +3,7 @@ package easyCodeRuPractice.lesson21;
 public class Circle extends Fiqure {
 
     public Circle(double radius) {
-        super(new double[]{radius});
+        super("Circle",new double[]{radius});
     }
 
     public double getPerimetr() {

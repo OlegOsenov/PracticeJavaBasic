@@ -3,7 +3,7 @@ package easyCodeRuPractice.lesson21;
 public class Rectangle extends Fiqure {
 
     public Rectangle(double a, double b) {
-        super(new double[]{a, b});
+        super("Rectangle", new double[]{a, b});
     }
 
     public double getPerimetr() {

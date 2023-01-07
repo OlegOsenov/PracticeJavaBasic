@@ -8,7 +8,7 @@ public class Play {
         fiqures[2] = new Triangle(3, 4, 5);
 
         for (Fiqure figure: fiqures) {
-            print("area: " + figure.getArea() + ", perimetr: " + figure.getPerimetr());
+            print(figure.type + " - area: " + figure.getArea() + ", perimetr: " + figure.getPerimetr());
         }
     }
 
