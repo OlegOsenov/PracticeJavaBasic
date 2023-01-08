@@ -12,4 +12,9 @@ public abstract class Animal {
     protected String getName(){
         return getClass().getName();
     }
+
+    @Override
+    public String toString() {
+        return getName() + " , кличка";
+    }
 }

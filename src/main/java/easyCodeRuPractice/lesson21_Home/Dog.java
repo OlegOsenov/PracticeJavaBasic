@@ -14,4 +14,9 @@ public class Dog extends Animal{
     protected String getName() {
         return "Собака";
     }
+
+    @Override
+    public String toString() {
+        return "Собака " + getName();
+    }
 }
