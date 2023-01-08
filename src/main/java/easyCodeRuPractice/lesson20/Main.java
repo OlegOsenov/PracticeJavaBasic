@@ -8,5 +8,6 @@ public class Main {
                 new Point(0, 0)
         );
         System.out.println(triangle.isRightTriangle());
+        System.out.println(triangle.getDescription());
     }
 }

@@ -31,4 +31,9 @@ public class Triangle {
                 this.sideA * this.sideA + this.sideC * this.sideC == this.sideB * this.sideB ||
                 this.sideC * this.sideC + this.sideB * this.sideB == this.sideA * this.sideA ;
     }
+    public String getDescription(){
+        return isRightTriangle()
+                ? "Прямоугольный треугольник"
+                : "обычный треугольник со сторонами " + sideA + " " + sideB + " " + sideC;
+    }
 }
