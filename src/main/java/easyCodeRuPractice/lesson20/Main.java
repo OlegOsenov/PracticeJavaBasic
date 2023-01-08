@@ -7,6 +7,7 @@ public class Main {
                 new Point(4, 0),
                 new Point(0, 0)
         );
+        System.out.println(triangle.isRightTriangle());
         System.out.println(triangle.getDescription());
     }
 }
