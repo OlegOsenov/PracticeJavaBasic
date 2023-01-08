@@ -10,6 +10,9 @@ public class Circle extends Fiqure {
     protected String getType() {
         return "Круг";
     }
+    public String toString() {
+        return getType() + " " + "площадь: " + getArea();
+    }
 
     public double getPerimetr() {
         return 2 * 3.14 * sides[0];
