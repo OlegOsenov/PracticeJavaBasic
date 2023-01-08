@@ -26,9 +26,14 @@ public class Triangle {
                 sideA + sideC > sideB &&
                 sideB + sideC > sideA;
     }
-    public boolean isRightTriangle(){
+    private boolean isRightTriangle(){
         return this.sideA * this.sideA + this.sideB * this.sideB == this.sideC * this.sideC ||
                 this.sideA * this.sideA + this.sideC * this.sideC == this.sideB * this.sideB ||
                 this.sideC * this.sideC + this.sideB * this.sideB == this.sideA * this.sideA ;
+    }
+    public String getDescription(){
+        return isRightTriangle()
+                ? "Прямоугольный треугольник"
+                : "обычный треугольник со сторонами " + sideA + " " + sideB + " " + sideC;
     }
 }

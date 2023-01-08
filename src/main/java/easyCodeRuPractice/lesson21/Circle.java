@@ -3,7 +3,12 @@ package easyCodeRuPractice.lesson21;
 public class Circle extends Fiqure {
 
     public Circle(double radius) {
-        super("Circle",new double[]{radius});
+        super(new double[]{radius});
+    }
+
+    @Override
+    protected String getType() {
+        return "Круг";
     }
 
     public double getPerimetr() {

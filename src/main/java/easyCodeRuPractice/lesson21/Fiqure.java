@@ -1,15 +1,26 @@
 package easyCodeRuPractice.lesson21;
 
+import java.util.Arrays;
+
 public abstract class Fiqure {
     final String type;
     protected final double[] sides;
 
-    protected Fiqure(String type, double[] sides) {
-        this.type = type;
+    protected Fiqure(double[] sides) {
+        this.type = getClass().getSimpleName();
         this.sides = sides;
     }
 
-    public double getPerimetr() {
+    protected String getType() {
+        return getClass().getSimpleName();
+    }
+
+    @Override
+    public String toString() {
+        return getType() + " - area: " + getArea() + ", perimeter: " + getPerimetr();
+    }
+
+    protected double getPerimetr() {
         double perimetr = 0;
         for (double side : sides) {
             perimetr += side;
@@ -17,5 +28,5 @@ public abstract class Fiqure {
         return perimetr;
     }
 
-    public abstract double getArea();
+    protected abstract double getArea();
 }

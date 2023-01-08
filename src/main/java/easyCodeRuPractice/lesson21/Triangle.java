@@ -3,7 +3,12 @@ package easyCodeRuPractice.lesson21;
 public class Triangle extends Fiqure {
 
     public Triangle(double a, double b, double c) {
-        super("Triangle", new double[]{a, b, c});
+        super(new double[]{a, b, c});
+    }
+
+    @Override
+    protected String getType() {
+        return "Треугольник";
     }
 
     public double getArea() {
