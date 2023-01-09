@@ -3,11 +3,14 @@ package easyCodeRuPractice.lesson21_Home;
 public class Dog extends Animal{
     protected Dog(String name) {
         super(name);
+       }
+    protected Dog(String name, int age){
+        super(name);
     }
 
     @Override
     public String movement() {
-        return "Умеет бегать";
+        return this.name + " умеет бегать";
     }
 
     @Override
@@ -17,6 +20,6 @@ public class Dog extends Animal{
 
     @Override
     public String toString() {
-        return "Собака " + getName();
+        return getName() + ", по прозвищу " + this.name;
     }
 }

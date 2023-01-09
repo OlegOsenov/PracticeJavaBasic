@@ -1,10 +1,13 @@
 package easyCodeRuPractice.lesson21_Home;
 
 public abstract class Animal {
-    private final String name;
+    protected final String name;
+    private static int count = 0;
 
     protected Animal(String name) {
         this.name = name;
+        System.out.println("Новое животное создано, по кличке " + this.name);
+        count++;
     }
 
     public abstract String movement();
@@ -15,6 +18,10 @@ public abstract class Animal {
 
     @Override
     public String toString() {
-        return getName() + " , кличка";
+        return getName() + " ,по кличка " + this.name;
+    }
+
+    public int getCount() {
+        return count;
     }
 }
