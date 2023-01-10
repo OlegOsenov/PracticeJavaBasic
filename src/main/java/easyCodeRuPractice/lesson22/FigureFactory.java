@@ -13,7 +13,7 @@ public class FigureFactory {
         } else if (sides.length == 2) {
             return new Rectangle(sides[0], sides[1]);
         } else if (sides.length == 3) {
-            return new Triangle(sides[0],sides[1],sides[3]);
+            return new Triangle(sides[0],sides[1],sides[2]);
         } else {
             throw new IllegalArgumentException("can't create object with arguments " + sides);
         }
