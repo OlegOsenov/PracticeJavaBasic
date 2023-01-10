@@ -7,7 +7,7 @@ import easyCodeRuPractice.lesson21.Triangle;
 
 public class FigureFactory {
 
-    public Fiqure create(double[] sides){
+    public Fiqure create(double... sides){
         if (sides.length == 1){
             return new Circle(sides[0]);
         } else if (sides.length == 2) {
