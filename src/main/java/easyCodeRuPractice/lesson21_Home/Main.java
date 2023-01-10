@@ -1,7 +1,5 @@
 package easyCodeRuPractice.lesson21_Home;
 
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
         Animal[] animals = new Animal[4];

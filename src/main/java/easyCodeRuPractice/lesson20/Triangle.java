@@ -26,7 +26,7 @@ public class Triangle {
                 sideA + sideC > sideB &&
                 sideB + sideC > sideA;
     }
-    private boolean isRightTriangle(){
+    boolean isRightTriangle(){
         return this.sideA * this.sideA + this.sideB * this.sideB == this.sideC * this.sideC ||
                 this.sideA * this.sideA + this.sideC * this.sideC == this.sideB * this.sideB ||
                 this.sideC * this.sideC + this.sideB * this.sideB == this.sideA * this.sideA ;
