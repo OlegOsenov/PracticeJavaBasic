@@ -8,6 +8,8 @@ public class Play {
         );
         MyData data = repository.getData();
         System.out.println(data.toString());
+        data = repository.getData();
+        System.out.println(data.toString());
     }
 
     private static MyData getMyData() {
