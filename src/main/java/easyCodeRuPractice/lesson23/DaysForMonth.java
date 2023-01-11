@@ -9,20 +9,27 @@ public class DaysForMonth {
 
     }
 
-    private static int getDaysForMonth(String month) {
+    private static String getDaysForMonth(String month) {
+        int days;
         switch (month.toLowerCase()) {
             case "january":
             case "январь":
-                return 31;
+                days = 31;
+                break;
             case "february":
             case "февраль":
-                return 28;
+                days = 28;
+                break;
             default:
-                throw new IllegalArgumentException("not recognized month " + month);
+                days = 0;
         }
+        return month + " has " + days + " days.";
     }
 
     private static void print(int str) {
+        System.out.println(str);
+    }
+    private static void print(String str) {
         System.out.println(str);
     }
 }
