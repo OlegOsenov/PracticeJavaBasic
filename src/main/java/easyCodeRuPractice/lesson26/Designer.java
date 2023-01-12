@@ -1,0 +1,31 @@
+package easyCodeRuPractice.lesson26;
+
+public class Designer extends Employee{
+    protected Designer(TaskProgressCallbac callback, String name, Task.Status taskStatus) {
+        super(callback, name, taskStatus);
+    }
+    @Override
+    protected Task getTaskWhenDone(Task task){
+        return new Task(
+                task.getId(),
+                Task.Status.READY_TO_DO,
+                task.getDescription(),
+                getDesignLinkForTask(task.getId()),
+                getTestCaseForTask(task.getDescription()),
+                ""
+        );
+    }
+
+    @Override
+    protected String getDetails(Task task){
+        return "with taskId " + task.getId() + " and description " + task.getDescription();
+    }
+
+    private String getTestCaseForTask(String taskDescription) {
+        return "when " + taskDescription + " get result " + Math.random();
+    }
+
+    private String getDesignLinkForTask(int taskId) {
+        return "http: //project/design_link_for_task_with_id " + taskId;
+    }
+}

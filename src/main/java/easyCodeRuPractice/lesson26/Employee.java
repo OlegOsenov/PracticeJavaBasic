@@ -1,6 +1,6 @@
 package easyCodeRuPractice.lesson26;
 
-public class Employee {
+public abstract class Employee {
 
     private final TaskProgressCallbac callback;
     private final String name;
