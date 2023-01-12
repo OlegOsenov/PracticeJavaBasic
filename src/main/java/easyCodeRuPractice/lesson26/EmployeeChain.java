@@ -16,7 +16,7 @@ public class EmployeeChain {
             nextEmployeeChain.doTask(task);
 
         }else {
-            throw new IllegalArgumentException("task can't be handled")
+            throw new IllegalArgumentException("task can't be handled");
         }
     }
 
