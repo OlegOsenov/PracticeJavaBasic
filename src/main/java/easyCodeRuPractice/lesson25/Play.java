@@ -2,14 +2,20 @@ package easyCodeRuPractice.lesson25;
 
 public class Play {
     public static void main(String[] args) {
-        DataSource repository = new Repository(
-                new CloudDataSource(),
-                new CachedDataSource()
+        DataSource<MyData> myDataDataSource = new Repository<>(
+                new MyDataCloudDataSource(),
+                new CachedDataSource<>()
         );
-        MyData data = repository.getData();
+
+        DataSource<GeoData> geoDataDataSource = new GeoRepository(
+                new GeoDataCloudDataSorce(),
+                new CachedDataSource<>()
+        );
+
+        MyData data = myDataDataSource.getData();
+        GeoData geoData = geoDataDataSource.getData();
         System.out.println(data.toString());
-        data = repository.getData();
-        System.out.println(data.toString());
+        System.out.println(geoData.toString());
     }
 
     private static MyData getMyData() {
