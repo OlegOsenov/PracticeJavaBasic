@@ -1,7 +1,7 @@
 package easyCodeRuPractice.lesson26;
 
 public class Tester extends Employee{
-    protected Tester(TaskProgressCallbac callback, String name) {
+    protected Tester(TaskProgressCallback callback, String name) {
         super(callback, name, Task.Status.READY_FOR_TESTING);
     }
 

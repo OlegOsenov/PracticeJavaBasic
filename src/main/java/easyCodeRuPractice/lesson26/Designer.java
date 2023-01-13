@@ -1,7 +1,7 @@
 package easyCodeRuPractice.lesson26;
 
 public class Designer extends Employee{
-    protected Designer(TaskProgressCallbac callback, String name){
+    protected Designer(TaskProgressCallback callback, String name){
         super(callback, name, Task.Status.ASSEMBLING_REQUIREMENTS);
     }
     @Override
