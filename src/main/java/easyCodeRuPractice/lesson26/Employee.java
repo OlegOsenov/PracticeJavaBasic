@@ -16,6 +16,9 @@ public abstract class Employee {
         System.out.println(getClass().getSimpleName() + " " + name + " is doing task " + getDetails(task));
         callback.updateTask(getTaskWhenDone(task));
     }
+    public boolean canHandleTask(Task task){
+        return taskStatus == task.getStatus();
+    }
 
     public Task.Status getTaskStatus(){
         return taskStatus;

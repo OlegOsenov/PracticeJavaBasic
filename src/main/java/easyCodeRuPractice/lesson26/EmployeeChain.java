@@ -10,15 +10,15 @@ public class EmployeeChain {
     }
 
     public boolean doTask(Task task) {
-        if (task.getStatus() == employee.getTaskStatus()) {
+        boolean result = false;
+        if (employee.canHandleTask(task)) {
             employee.doTask(task);
-            return true;
+            result = true;
         } else if (nextEmployeeChain != null) {
-            return nextEmployeeChain.doTask(task);
+            result = nextEmployeeChain.doTask(task);
 
-        }else {
-            return false;
         }
+        return result;
     }
 
     public void setNextEmployeeChain(EmployeeChain nextEmployeeChain) {
