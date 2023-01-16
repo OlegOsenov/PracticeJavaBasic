@@ -12,6 +12,7 @@ public class SearchLine {
 
         System.out.println(Arrays.toString(searchNaive(text, sample).toArray()));
         System.out.println(Arrays.toString(prefixFunction(sample)));
+        System.out.println(Arrays.toString(KMPSearch(text,sample).toArray()));
 
     }
 
@@ -39,6 +40,32 @@ public class SearchLine {
             }
         }
         return values;
+    }
+
+    public static ArrayList<Integer> KMPSearch(String text, String sample) {
+        ArrayList<Integer> found = new ArrayList<>();
+
+        int[] prefixFunc = prefixFunction(sample);
+        int i = 0;
+        int j = 0;
+
+        while (i < text.length()) {
+            if (sample.charAt(j) == text.charAt(i)) {
+                j++;
+                i++;
+            }
+            if (j == sample.length()) {
+                found.add(i - j);
+                j = prefixFunc[j -1];
+            } else if (i < text.length() && sample.charAt(j) != text.charAt(i)) {
+                if (j != 0){
+                    j = prefixFunc[j-1];
+                } else {
+                    i  = i + 1;
+                }
+            }
+        }
+        return found;
     }
 
 }
